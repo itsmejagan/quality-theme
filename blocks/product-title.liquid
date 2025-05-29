@@ -1,0 +1,27 @@
+<h2
+  class="title-block" {{ block.shopify_attributes }}
+>
+  {{ block.settings.product.title | default: 'Example product title' }}
+</h2>
+
+{% schema %}
+{
+  "name": "Product (title)",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }    
+  ],
+  "presets": [
+    {
+      "name": "Product (title)",
+      "settings": {
+        "product": "{{ closest.product }}"
+      }
+    }
+  ]
+}
+{% endschema %}
