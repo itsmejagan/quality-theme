@@ -16,44 +16,58 @@
     "featured_collections_qcbEmw": {
       "type": "featured-collections",
       "blocks": {
-        "product_grid_hLh6MM": {
-          "type": "product-grid",
-          "name": "Product grid",
-          "settings": {
-            "collection": "hydrogen"
+        "card_VaRhV8": {
+          "type": "card",
+          "name": "Product Card",
+          "settings": {},
+          "blocks": {
+            "group_GPXEEH": {
+              "type": "group",
+              "settings": {
+                "layout_direction": "group--vertical",
+                "alignment": "flex-start",
+                "padding": 0
+              },
+              "blocks": {
+                "product_grid_4y9LpD": {
+                  "type": "product-grid",
+                  "name": "Product grid",
+                  "settings": {
+                    "collection": "hydrogen"
+                  },
+                  "blocks": {}
+                },
+                "text_mjgnWy": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>{{ closest.product.title }}</p>",
+                    "text_style": "text--title",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "price_gnymEQ": {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_grid_4y9LpD",
+                "text_mjgnWy",
+                "price_gnymEQ"
+              ]
+            }
           },
-          "blocks": {}
-        },
-        "price_6VCiaz": {
-          "type": "price",
-          "name": "Product (price)",
-          "settings": {
-            "product": "{{ closest.product }}"
-          },
-          "blocks": {}
-        },
-        "product_title_mLRJGg": {
-          "type": "product-title",
-          "name": "Product (title)",
-          "settings": {
-            "product": "{{ closest.product }}"
-          },
-          "blocks": {}
-        },
-        "price_eAwWqN": {
-          "type": "price",
-          "name": "Product (price)",
-          "settings": {
-            "product": "{{ closest.product }}"
-          },
-          "blocks": {}
+          "block_order": [
+            "group_GPXEEH"
+          ]
         }
       },
       "block_order": [
-        "product_grid_hLh6MM",
-        "price_6VCiaz",
-        "product_title_mLRJGg",
-        "price_eAwWqN"
+        "card_VaRhV8"
       ],
       "name": "Feature collection",
       "settings": {
