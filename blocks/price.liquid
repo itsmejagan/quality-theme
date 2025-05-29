@@ -1,6 +1,19 @@
+{{ block.settings.product.price | default: 1999 }}
+
 {% schema %}
-  {
-    "name": "Block name",
-    "settings": []
-  }
+{
+  "name": "Product (price)",
+  "class": "price-block",
+  "settings": [{
+    "type": "product",
+    "id": "product",
+    "label": "Product"
+   }],
+  "presets": [{
+    "name": "Product (price)",
+    "settings": {
+      "product": "{{ closest.product }}"
+    }
+  }]
+}
 {% endschema %}
