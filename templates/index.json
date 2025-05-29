@@ -12,9 +12,58 @@
     "main": {
       "type": "hello-world",
       "settings": {}
+    },
+    "featured_collections_qcbEmw": {
+      "type": "featured-collections",
+      "blocks": {
+        "product_grid_hLh6MM": {
+          "type": "product-grid",
+          "name": "Product grid",
+          "settings": {
+            "collection": "hydrogen"
+          },
+          "blocks": {}
+        },
+        "price_6VCiaz": {
+          "type": "price",
+          "name": "Product (price)",
+          "settings": {
+            "product": "{{ closest.product }}"
+          },
+          "blocks": {}
+        },
+        "product_title_mLRJGg": {
+          "type": "product-title",
+          "name": "Product (title)",
+          "settings": {
+            "product": "{{ closest.product }}"
+          },
+          "blocks": {}
+        },
+        "price_eAwWqN": {
+          "type": "price",
+          "name": "Product (price)",
+          "settings": {
+            "product": "{{ closest.product }}"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_grid_hLh6MM",
+        "price_6VCiaz",
+        "product_title_mLRJGg",
+        "price_eAwWqN"
+      ],
+      "name": "Feature collection",
+      "settings": {
+        "color_scheme": "",
+        "collection": "hydrogen"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured_collections_qcbEmw"
   ]
 }
