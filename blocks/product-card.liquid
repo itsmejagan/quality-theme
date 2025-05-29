@@ -1,0 +1,48 @@
+
+
+{% liquid
+  assign product = block.settings.product
+-%}
+
+{% capture children %}
+  {% content_for 'blocks', closest.product: product %}
+{% endcapture %}
+
+{% render 'product-card', children: children, product: product %}
+
+{% schema %}
+{
+  "name": "product-card",
+  "blocks": [{"type": "@theme"}],
+  "presets": [
+    {
+      "name": "Product Card",
+      "blocks": [
+        {
+          "type": "group",
+          "blocks": [
+            {
+              "type": "text",
+              "settings": {
+                "text": "<p>{{ closest.product.title }}</p>"
+              }
+            },
+            {
+              "type": "price",
+              "settings": {
+                "product": "{{ closest.product }}"
+              }
+            },
+            {
+              "type": "product-medias",
+              "settings": {
+                "product": "{{ closest.product }}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
