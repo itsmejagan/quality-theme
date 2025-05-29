@@ -1,6 +1,39 @@
+<ul class="product-grid">
+  {% for product in block.settings.collection.products %}
+    <li>
+      {% content_for "block", type: "product-card", id: "card", closest.product: product %}
+    </li>
+  {% endfor %}
+</ul>
+
 {% schema %}
-  {
-    "name": "Block name",
-    "settings": []
-  }
+{
+  "name": "Product grid",
+  "settings": [{
+    "type": "collection",
+    "id": "collection",
+    "label": "Collection"
+  }],
+  "presets": [{
+    "name": "Product grid",
+    "blocks": [
+      {
+        "id": "card",
+        "type": "product-card",
+        "static": true,
+        "settings": {
+          "product": "{{ closest.product }}"
+        },
+        "blocks": [
+          {
+            "type": "price",
+            "settings": {
+              "product": "{{ closest.product }}"
+            }
+          }
+        ]
+      }
+    ]
+  }]
+}
 {% endschema %}
