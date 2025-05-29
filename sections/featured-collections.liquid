@@ -1,0 +1,80 @@
+<div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}">
+  {% comment %} [START section.render_blocks] {% endcomment %}
+  {% content_for 'blocks' %}
+  {% comment %} [END section.render_blocks] {% endcomment %}
+</div>
+
+{% comment %} [START section.blocks] {% endcomment %}
+{% schema %}
+{
+  "name": "Featured collection",  
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature collection"
+    },
+{
+      "name": "Featured collection",      
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Featured collection</h2>",
+            "alignment": "start"
+          }
+        },
+        {
+          "type": "product-grid",
+          "settings": {
+            "spacing": {
+              "padding": "0px"
+            }
+          },
+          "blocks": [
+            {
+              "id": "product-grid-item",
+              "type": "product-card",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}"
+              },
+              "blocks": [
+                {
+                  "type": "product-medias",
+                  "settings": {
+                    "product": "{{ closest.product }}",
+                    "media_featured": true
+                  }
+                },
+                {
+                  "type": "product-title",
+                  "settings": {
+                    "product": "{{ closest.product }}",
+                    "heading_size": "h5"
+                  }
+                },
+                {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+}
+  ]
+}
+      {% endschema %}
+{% comment %} [END section.blocks] {% endcomment %}
