@@ -1,27 +1,6 @@
-{%- liquid
-  assign product_resource = block.settings.product
-  assign selected_variant = product_resource.selected_or_first_available_variant
--%}
- {% render 'price',
-    show_unit_price: true,
-    product: selected_variant,
-    show_sale_price_first: block.settings.show_sale_price_first
-  %}
 {% schema %}
-{
-  "name": "t:names.product_price",
-  "tag": null,
-  settings": [
-    {
-      "type": "paragraph",
-      "content": "Price"
-    },
-    {
-      "type": "product",
-      "id": "product",
-      "label": "t:settings.product"
-    }
-]
-}
+  {
+    "name": "Block name",
+    "settings": []
+  }
 {% endschema %}
-{% # theme-check-enable %}
