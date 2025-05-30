@@ -1,7 +1,5 @@
-<div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}">
-  {% comment %} [START section.render_blocks] {% endcomment %}
-  {% content_for 'blocks' %}
-  {% comment %} [END section.render_blocks] {% endcomment %}
+<div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}"> 
+  {% content_for 'blocks' %} 
 </div>
 
 {% comment %} [START section.blocks] {% endcomment %}
