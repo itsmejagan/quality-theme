@@ -20,7 +20,7 @@
       "type": "product",
       "id": "product",
       "label": "Product"
-    },   
+    },    
     {
       "type": "paragraph",
       "content": "Width is automatically optimized for mobile."
@@ -33,15 +33,16 @@
       },
       "blocks": [
         {
-          "type": "product-card-gallery",
+          "type": "product-medias",
           "settings": {
-            "product": "{{ closest.product }}",           
+            "product": "{{ closest.product }}"            
           }
         },
         {
           "type": "product-title",
           "settings": {
-            "product": "{{ closest.product }}",           
+            "product": "{{ closest.product }}",
+            "heading_size": "h5"
           }
         },
         {
