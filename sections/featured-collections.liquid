@@ -33,14 +33,7 @@
  {{ list_items }}
 </div>
 
-<ul class="product-grid">
-  {% for product in section.settings.collection.products %}
-    {{ product.title }}
-    <li>
-      {% content_for "block", type: "product-card", id: "card", closest.product: product %}
-    </li>
-  {% endfor %}
-</ul>
+   {%- content_for 'blocks' -%}
 
 {% schema %}
 {
