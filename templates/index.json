@@ -19,7 +19,7 @@
         "text_JXJkFW": {
           "type": "text",
           "settings": {
-            "text": "<h2>Featured collection</h2>",
+            "text": "Featured collection",
             "text_style": "text--title",
             "alignment": "left"
           },
@@ -35,9 +35,41 @@
               "type": "product-card",
               "static": true,
               "settings": {
-                "product": ""
+                "product": "the-archived-snowboard"
               },
-              "blocks": {}
+              "blocks": {
+                "product_medias_8xygCN": {
+                  "type": "product-medias",
+                  "name": "Product (media)",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                },
+                "price_7cj6Da": {
+                  "type": "price",
+                  "name": "Product (price)",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                },
+                "product_title_GCetQU": {
+                  "type": "product-title",
+                  "name": "Product (title)",
+                  "settings": {
+                    "product": "{{ closest.product }}",
+                    "heading_size": "h3",
+                    "alignment": "start"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_medias_8xygCN",
+                "price_7cj6Da",
+                "product_title_GCetQU"
+              ]
             }
           },
           "block_order": []
