@@ -185,7 +185,7 @@
       "blocks": {        
         "static-product-card": {
           "type": "product-card",
-          "name": "t:names.product_card",
+          "name": "product_card",
           "static": true,
           "settings": {
             "product": "{{ closest.product }}",
@@ -204,7 +204,7 @@
           "blocks": {
             "card-gallery": {
               "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
+              "name": "product_card_media",
               "settings": {
                 "product": "{{ closest.product }}",
                 "image_ratio": "portrait"
@@ -213,13 +213,13 @@
             },
             "group": {
               "type": "group",
-              "name": "t:names.group",
+              "name": "group",
               "settings": {               
               },
               "blocks": {
                 "price": {
                   "type": "price",
-                  "name": "t:names.product_price",
+                  "name": "price",
                   "settings": {
                     "product": "{{ closest.product }}",
                    
@@ -227,7 +227,7 @@
                 },
                 "product_title": {
                   "type": "product-title",
-                  "name": "t:names.product_title",
+                  "name": "product_title",
                   "settings": {
                     "product": "{{ closest.product }}",
                     "type_preset": "h5",
