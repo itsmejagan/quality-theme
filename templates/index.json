@@ -28,17 +28,20 @@
         "product_grid_tWx7pM": {
           "type": "product-grid",
           "settings": {
-            "collection": "hydrogen"
+            "collection": "hydrogen",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "color_scheme": ""
           },
           "blocks": {
-            "card": {
+            "product-grid-item": {
               "type": "product-card",
               "static": true,
               "settings": {
                 "product": "the-archived-snowboard"
               },
               "blocks": {
-                "product_medias_8xygCN": {
+                "product_medias_jLnFn6": {
                   "type": "product-medias",
                   "name": "Product (media)",
                   "settings": {
@@ -46,15 +49,7 @@
                   },
                   "blocks": {}
                 },
-                "price_7cj6Da": {
-                  "type": "price",
-                  "name": "Product (price)",
-                  "settings": {
-                    "product": "{{ closest.product }}"
-                  },
-                  "blocks": {}
-                },
-                "product_title_GCetQU": {
+                "product_title_9BMV6t": {
                   "type": "product-title",
                   "name": "Product (title)",
                   "settings": {
@@ -66,9 +61,8 @@
                 }
               },
               "block_order": [
-                "product_medias_8xygCN",
-                "price_7cj6Da",
-                "product_title_GCetQU"
+                "product_medias_jLnFn6",
+                "product_title_9BMV6t"
               ]
             }
           },
