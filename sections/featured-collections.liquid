@@ -1,6 +1,45 @@
+{% liquid
+    assign max_items = section.settings.max_products  
+    assign list_items_array = list_items | strip | split: '<!--@list/split-->'
+    if section.settings.collection != blank and shop.products_count != 0
+    assign section_products = section.settings.collection.products
+    assign max_items = section_products.size | at_most: section.settings.max_products
+  endif
+  %}
+ 
+ 
+  {% capture list_items %}
+    {% for i in (1..max_items) %}
+      {% if section_products.size > 0 %}
+        {% assign index = forloop.index0 %}
+        {% assign product = section_products[index] %}
+      {% else %}
+        {% assign product = null %}
+      {% endif %}
+      <div
+        class="resource-list__item"
+      >
+        {% content_for 'block', type: 'product-card', id: 'static-product-card', closest.product: product %}
+      </div>
+
+      {% unless forloop.last %}
+        <!--@list/split-->
+      {% endunless %}
+
+    {% endfor %}
+  {% endcapture %}
+  
 <div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}"> 
   {% content_for 'blocks' , closest.collection: section.settings.collection %} 
 </div>
+
+<ul class="product-grid">
+  {% for product in block.settings.collection.products %}
+    <li>
+      {% content_for "block", type: "product-card", id: "card", closest.product: product %}
+    </li>
+  {% endfor %}
+</ul>
 
 {% schema %}
 {
