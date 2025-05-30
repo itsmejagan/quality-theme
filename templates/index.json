@@ -12,9 +12,28 @@
     "main": {
       "type": "hello-world",
       "settings": {}
+    },
+    "custom_section_YHAfVE": {
+      "type": "custom-section",
+      "blocks": {
+        "product_grid_hnWtLm": {
+          "type": "product-grid",
+          "name": "Product grid",
+          "settings": {
+            "collection": "hydrogen"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_grid_hnWtLm"
+      ],
+      "name": "t:general.custom_section",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_section_YHAfVE"
   ]
 }
