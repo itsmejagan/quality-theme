@@ -16,17 +16,58 @@
     "custom_section_YHAfVE": {
       "type": "custom-section",
       "blocks": {
-        "product_grid_hnWtLm": {
-          "type": "product-grid",
-          "name": "Product grid",
-          "settings": {
-            "collection": "hydrogen"
+        "card_R7NMfU": {
+          "type": "card",
+          "name": "Product Card",
+          "settings": {},
+          "blocks": {
+            "group_UVjqex": {
+              "type": "group",
+              "settings": {
+                "layout_direction": "group--vertical",
+                "alignment": "flex-start",
+                "padding": 0
+              },
+              "blocks": {
+                "product_grid_tRYJkj": {
+                  "type": "product-grid",
+                  "name": "Product grid",
+                  "settings": {
+                    "collection": "hydrogen"
+                  },
+                  "blocks": {}
+                },
+                "text_cqjKj6": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>{{ closest.product.title }}</p>",
+                    "text_style": "text--title",
+                    "alignment": "left"
+                  },
+                  "blocks": {}
+                },
+                "price_KcnKbn": {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_grid_tRYJkj",
+                "text_cqjKj6",
+                "price_KcnKbn"
+              ]
+            }
           },
-          "blocks": {}
+          "block_order": [
+            "group_UVjqex"
+          ]
         }
       },
       "block_order": [
-        "product_grid_hnWtLm"
+        "card_R7NMfU"
       ],
       "name": "t:general.custom_section",
       "settings": {}
