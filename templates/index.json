@@ -41,6 +41,46 @@
                 "product": "{{ closest.product }}"
               },
               "blocks": {
+                "product_card_XFKfGd": {
+                  "type": "product-card",
+                  "name": "Product card",
+                  "settings": {
+                    "product": "the-complete-snowboard"
+                  },
+                  "blocks": {
+                    "product_medias_MzKQRX": {
+                      "type": "product-medias",
+                      "disabled": true,
+                      "settings": {
+                        "product": "{{ closest.product }}"
+                      },
+                      "blocks": {}
+                    },
+                    "product_title_KGR7Dz": {
+                      "type": "product-title",
+                      "disabled": true,
+                      "settings": {
+                        "product": "{{ closest.product }}",
+                        "heading_size": "h5",
+                        "alignment": "start"
+                      },
+                      "blocks": {}
+                    },
+                    "price_bdc4FQ": {
+                      "type": "price",
+                      "disabled": true,
+                      "settings": {
+                        "product": "{{ closest.product }}"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "product_medias_MzKQRX",
+                    "product_title_KGR7Dz",
+                    "price_bdc4FQ"
+                  ]
+                },
                 "product_medias_87fkLq": {
                   "type": "product-medias",
                   "settings": {
@@ -66,6 +106,7 @@
                 }
               },
               "block_order": [
+                "product_card_XFKfGd",
                 "product_medias_87fkLq",
                 "product_title_n3zpwz",
                 "price_MwAN3q"
