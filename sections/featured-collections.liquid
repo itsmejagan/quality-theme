@@ -1,9 +1,9 @@
 {% liquid
-    assign max_items = section.settings.max_products  
+    assign max_items = section.settings.products_to_show  
     assign list_items_array = list_items | strip | split: '<!--@list/split-->'
     if section.settings.collection != blank and shop.products_count != 0
     assign section_products = section.settings.collection.products
-    assign max_items = section_products.size | at_most: section.settings.max_products
+    assign max_items = section_products.size | at_most: section.settings.products_to_show
   endif
   %}
  
