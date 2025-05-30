@@ -12,9 +12,81 @@
     "main": {
       "type": "hello-world",
       "settings": {}
+    },
+    "custom_section_ifGhM3": {
+      "type": "custom-section",
+      "blocks": {
+        "text_Phg6yk": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Featured collection</h2>",
+            "text_style": "text--title",
+            "alignment": "left"
+          },
+          "blocks": {}
+        },
+        "product_grid_EakbYD": {
+          "type": "product-grid",
+          "settings": {
+            "collection": "hydrogen",
+            "products_to_show": 4,
+            "columns_desktop": 4,
+            "color_scheme": ""
+          },
+          "blocks": {
+            "product-grid-item": {
+              "type": "product-card",
+              "static": true,
+              "settings": {
+                "product": "{{ closest.product }}"
+              },
+              "blocks": {
+                "product_medias_87fkLq": {
+                  "type": "product-medias",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                },
+                "product_title_n3zpwz": {
+                  "type": "product-title",
+                  "settings": {
+                    "product": "{{ closest.product }}",
+                    "heading_size": "h5",
+                    "alignment": "start"
+                  },
+                  "blocks": {}
+                },
+                "price_MwAN3q": {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_medias_87fkLq",
+                "product_title_n3zpwz",
+                "price_MwAN3q"
+              ]
+            }
+          },
+          "block_order": []
+        }
+      },
+      "block_order": [
+        "text_Phg6yk",
+        "product_grid_EakbYD"
+      ],
+      "name": "Featured collection",
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_section_ifGhM3"
   ]
 }
