@@ -30,7 +30,7 @@
   {% endcapture %}
   
 <div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}"> 
-  {% content_for 'blocks' , closest.collection: section.settings.collection %} 
+ {{ list_items }}
 </div>
 
 <ul class="product-grid">
