@@ -13,19 +13,19 @@
       "type": "hello-world",
       "settings": {}
     },
-    "featured_collections_YLBFfC": {
-      "type": "featured-collections",
+    "custom_section_FiNj9H": {
+      "type": "custom-section",
       "blocks": {
-        "text_4N6nPK": {
+        "text_JXJkFW": {
           "type": "text",
           "settings": {
-            "text": "Featured collection",
+            "text": "<h2>Featured collection</h2>",
             "text_style": "text--title",
             "alignment": "left"
           },
           "blocks": {}
         },
-        "product_grid_G9kC8h": {
+        "product_grid_tWx7pM": {
           "type": "product-grid",
           "settings": {
             "collection": "hydrogen"
@@ -35,56 +35,26 @@
               "type": "product-card",
               "static": true,
               "settings": {
-                "product": "the-collection-snowboard-hydrogen"
+                "product": ""
               },
-              "blocks": {
-                "price_Ya6ePX": {
-                  "type": "price",
-                  "name": "Product (price)",
-                  "settings": {
-                    "product": "{{ closest.product }}"
-                  },
-                  "blocks": {}
-                },
-                "product_title_HAr9ek": {
-                  "type": "product-title",
-                  "name": "Product (title)",
-                  "settings": {
-                    "product": "{{ closest.product }}",
-                    "heading_size": "h3",
-                    "alignment": "start"
-                  },
-                  "blocks": {}
-                },
-                "product_card_gallery_ywXcPJ": {
-                  "type": "product-card-gallery",
-                  "name": "Product (media)",
-                  "settings": {
-                    "product": "{{ closest.product }}"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "price_Ya6ePX",
-                "product_title_HAr9ek",
-                "product_card_gallery_ywXcPJ"
-              ]
+              "blocks": {}
             }
           },
           "block_order": []
         }
       },
       "block_order": [
-        "text_4N6nPK",
-        "product_grid_G9kC8h"
+        "text_JXJkFW",
+        "product_grid_tWx7pM"
       ],
-      "name": "Featured collections",
-      "settings": {}
+      "name": "Featured collection",
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
     "main",
-    "featured_collections_YLBFfC"
+    "custom_section_FiNj9H"
   ]
 }
