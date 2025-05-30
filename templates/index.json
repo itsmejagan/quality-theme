@@ -35,7 +35,28 @@
                   "settings": {
                     "collection": "hydrogen"
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "card": {
+                      "type": "product-card",
+                      "static": true,
+                      "settings": {
+                        "product": "",
+                        "product_card_gap": 16,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": []
                 },
                 "text_cqjKj6": {
                   "type": "text",
@@ -71,10 +92,120 @@
       ],
       "name": "t:general.custom_section",
       "settings": {}
+    },
+    "featured_collections_PEMtnz": {
+      "type": "featured-collections",
+      "blocks": {
+        "product_card_dhEHmB": {
+          "type": "product-card",
+          "name": "t:names.product_card",
+          "settings": {
+            "product": "the-3p-fulfilled-snowboard",
+            "product_card_gap": 16,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_KCbKfL": {
+              "type": "_product-card-gallery",
+              "settings": {
+                "product": "{{ closest.product }}",
+                "image_ratio": "portrait",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_Ce7YAL": {
+              "type": "group",
+              "settings": {
+                "layout_direction": "group--vertical",
+                "alignment": "flex-start",
+                "padding": 0
+              },
+              "blocks": {
+                "product_title_fdd9XA": {
+                  "type": "product-title",
+                  "settings": {
+                    "product": "{{ closest.product }}",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_9HyTaG": {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_title_fdd9XA",
+                "price_9HyTaG"
+              ]
+            }
+          },
+          "block_order": [
+            "product_card_gallery_KCbKfL",
+            "group_Ce7YAL"
+          ]
+        }
+      },
+      "block_order": [
+        "product_card_dhEHmB"
+      ],
+      "name": "Featured collections",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "collection": "hydrogen",
+        "products_to_show": 8,
+        "desktop": "4",
+        "mobile": "2",
+        "swiper_enable": false,
+        "auto_play": 5,
+        "space": 10,
+        "styles": "none",
+        "nav_style": "classic",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
-    "custom_section_YHAfVE"
+    "custom_section_YHAfVE",
+    "featured_collections_PEMtnz"
   ]
 }
