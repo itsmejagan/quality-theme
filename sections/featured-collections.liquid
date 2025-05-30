@@ -36,7 +36,7 @@
 <ul class="product-grid">
   {% for product in section.settings.collection.products %}
     <li>
-      {% content_for "block", type: "product-card", id: "card", closest.product: product %}
+      {% content_for "block", type: "product-card", id: "static-product-card", closest.product: product %}
     </li>
   {% endfor %}
 </ul>
