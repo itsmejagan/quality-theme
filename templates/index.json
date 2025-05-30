@@ -12,72 +12,9 @@
     "main": {
       "type": "hello-world",
       "settings": {}
-    },
-    "featured_collections_qcbEmw": {
-      "type": "featured-collections",
-      "blocks": {
-        "card_VaRhV8": {
-          "type": "card",
-          "name": "Product Card",
-          "settings": {},
-          "blocks": {
-            "group_GPXEEH": {
-              "type": "group",
-              "settings": {
-                "layout_direction": "group--vertical",
-                "alignment": "flex-start",
-                "padding": 0
-              },
-              "blocks": {
-                "product_grid_4y9LpD": {
-                  "type": "product-grid",
-                  "name": "Product grid",
-                  "settings": {
-                    "collection": "hydrogen"
-                  },
-                  "blocks": {}
-                },
-                "text_mjgnWy": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>{{ closest.product.title }}</p>",
-                    "text_style": "text--title",
-                    "alignment": "left"
-                  },
-                  "blocks": {}
-                },
-                "price_gnymEQ": {
-                  "type": "price",
-                  "settings": {
-                    "product": "{{ closest.product }}"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "product_grid_4y9LpD",
-                "text_mjgnWy",
-                "price_gnymEQ"
-              ]
-            }
-          },
-          "block_order": [
-            "group_GPXEEH"
-          ]
-        }
-      },
-      "block_order": [
-        "card_VaRhV8"
-      ],
-      "name": "Feature collection",
-      "settings": {
-        "color_scheme": "",
-        "collection": "hydrogen"
-      }
     }
   },
   "order": [
-    "main",
-    "featured_collections_qcbEmw"
+    "main"
   ]
 }
