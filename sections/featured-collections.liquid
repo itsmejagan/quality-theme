@@ -1,45 +1,6 @@
-{% liquid
-    assign max_items = section.settings.products_to_show  
-    assign list_items_array = list_items | strip | split: '<!--@list/split-->'
-    if section.settings.collection != blank and shop.products_count != 0
-    assign section_products = section.settings.collection.products
-    assign max_items = section_products.size | at_most: section.settings.products_to_show
-  endif
-  %}
- 
- 
-  {% capture list_items %}
-    {% for i in (1..max_items) %}
-      {% if section_products.size > 0 %}
-        {% assign index = forloop.index0 %}
-        {% assign product = section_products[index] %}
-      {% else %}
-        {% assign product = null %}
-      {% endif %}
-      <div
-        class="resource-list__item"
-      >
-        {% content_for 'block', type: 'product-card', id: 'static-product-card', closest.product: product %}
-      </div>
-
-      {% unless forloop.last %}
-        <!--@list/split-->
-      {% endunless %}
-
-    {% endfor %}
-  {% endcapture %}
-  
 <div class="full-width {{ section.settings | class_list }} color-{{ section.settings.color_scheme }}"> 
-  {{ list_items }}
+  {% content_for 'blocks' %}
 </div>
-<ul class="product-grid">
-  {% for product in section.settings.collection.products %}
-    <li>
-      {% content_for "block", type: "product-card", id: "card", closest.product: product %}
-    </li>
-  {% endfor %}
-</ul>
-   {%- content_for 'blocks' -%}
 
 {% schema %}
 {
@@ -221,71 +182,50 @@
         "padding_top": 40,
         "padding_bottom": 40
       },
-      "blocks": {        
-        "static-product-card": {
-          "type": "product-card",
-          "name": "product_card",
-          "static": true,
+   
+
+ "blocks": [
+        {
+          "type": "text",
           "settings": {
-            "product": "{{ closest.product }}",
-            "product_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "card-gallery": {
-              "type": "_product-card-gallery",
-              "name": "product_card_media",
+            "text": "<h2>Featured collection</h2>"            
+          }
+        },
+        {
+          "type": "product-grid",          
+          "blocks": [
+            {
+              "id": "product-grid-item",
+              "type": "product-card",
+              "static": true,
               "settings": {
-                "product": "{{ closest.product }}",
-                "image_ratio": "portrait"
+                "product": "{{ closest.product }}"
               },
-              "blocks": {}
-            },
-            "group": {
-              "type": "group",
-              "name": "group",
-              "settings": {               
-              },
-              "blocks": {
-                "price": {
-                  "type": "price",
-                  "name": "price",
-                  "settings": {
-                    "product": "{{ closest.product }}",
-                   
-                  }
-                },
-                "product_title": {
-                  "type": "product-title",
-                  "name": "product_title",
+              "blocks": [
+                {
+                  "type": "_product-card-gallery",
                   "settings": {
                     "product": "{{ closest.product }}"                    
                   }
                 },
-                "swatches": {
-                  "type": "swatches",
-                  "name": "t:names.swatches",
+                {
+                  "type": "product-title",
                   "settings": {
-                    "product": "{{ closest.product }}"                                      
+                    "product": "{{ closest.product }}"                    
+                  }
+                },
+                {
+                  "type": "price",
+                  "settings": {
+                    "product": "{{ closest.product }}"
                   }
                 }
-              },
-              "block_order": ["product_title", "price", "swatches"]
+              ]
             }
-          },
-          "block_order": ["card-gallery", "group"]
+          ]
         }
-      }
-    } 
+      ]
+    }
   ]
 }
       {% endschema %}
